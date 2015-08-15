@@ -2,7 +2,7 @@ body {
   font-family: 'Helvetica'
 }
 
-div {
+#info > div {
   float: left;
   text-align: center;
 }
@@ -12,7 +12,7 @@ div p {
 }
 
 img {
-  margin: 5px;
+  padding: 5px;
   width: 200px;
   height: 300px;
 }
@@ -23,16 +23,23 @@ div.search {
   width: 275px;
   padding: 10px;
   margin: 30px auto;
-  float: none;
 }
 
 #display {
   width: 70%;
-  height: 300px;
-  text-align: center;
+  padding: 1em;
+  height: 350px;
   background: skyblue;
   margin: 30px auto;
-  float: none;
+  overflow: scroll;
+}
+
+#display p {
+}
+
+#display img {
+  float: left;
+  margin-right: 10%;
 }
 /*#display div {
   width: 300px;

@@ -58,7 +58,7 @@ function search() {
       console.log("Success: " + e);
 
       for (var i = 0; i < e.results.length; i++) {
-        //console.log(JSON.stringify(e.results[i]));
+        console.log(JSON.stringify(e.results[i]));
         var show = document.createElement('div');
         show.id = i;
         var json = e.results[i];
@@ -76,11 +76,18 @@ function search() {
         function click() {
           var display = document.getElementById('display');
           display.innerHTML = '';
+          //img.src = '';
           var i = this.id;
           console.log(i);
+          var displayPoster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
+          img.src = displayPoster;
+          if (img.src === 'http://image.tmdb.org/t/p/w500null') {
+          img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
+        }
+          display.appendChild(img);
           display.innerHTML += '<p>Air date: ' + e.results[i].first_air_date + '</p>';
-          display.innerHTML += '<p>Name: ' + e.results[i].original_name + '</p><br>';
-          display.innerHTML += '<p>Description: ' + e.results[i].overview + '</p><br>';
+          display.innerHTML += '<p>Name: ' + e.results[i].original_name + '</p>';
+          display.innerHTML += '<p>Description: ' + e.results[i].overview + '</p>';
 
           //container.innerHTML += 'Popularity' + e.results[i].popularity + '<br>';
         };
