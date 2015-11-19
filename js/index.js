@@ -42,6 +42,18 @@
   }
 })()
 
+window.addEventListener('keydown', function(e) {handleKeyPress(e);}, false);
+
+var input = document.getElementById('search');
+input.addEventListener('click', search, false);
+
+function handleKeyPress(e) {
+ var key=e.keyCode || e.which;
+  if (key==13){
+     search();
+  }
+}
+
 function search() {
 
   var info = document.getElementById('info');
@@ -82,8 +94,8 @@ function search() {
           var displayPoster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
           img.src = displayPoster;
           if (img.src === 'http://image.tmdb.org/t/p/w500null') {
-          img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
-        }
+            img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
+          }
           display.appendChild(img);
           display.innerHTML += '<p>Air date: ' + e.results[i].first_air_date + '</p>';
           display.innerHTML += '<p>Name: ' + e.results[i].original_name + '</p>';
