@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>the Movie Database API (Television)</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div class='search'>
+  <input type="text" id='query' required></input>
+  <button id='search'>Search</button>
+</div>
+<div class="movieOptions">
+  <button class="categories" onclick="IMDB.movTop()">Top Movies</button>
+  <button class="categories" onclick="IMDB.movPop()">Popular</button>
+  <button class="categories" onclick="IMDB.now()"> Now Playing </button>
+  <button class="categories" onclick="IMDB.soon()"> Upcoming </button>
+  <button class="categories" onclick="IMDB.tvPop()"> TV Popular </button>
+  <button class="categories" onclick="IMDB.tvTop()"> TV Top Rated </button>
+</div>
+<!--Movie Options-->
+<div id='display'>
+</div>
+<div id='container'>
+</div>
+<div id="info">
+</div>
+    
+        <script src="js/IMDB.js"></script>
+        <script src="js/index.js"></script>
+      
+
+    
+    
+    
+  </body>
+</html>
