@@ -9,7 +9,8 @@ var IMDB = (function () {
     var results = Object.keys(e.results);
     console.log("Success: " + e);
     console.log(e.results);
-    for (var i = 0; i < e.results.length; i++) {
+    var resultLen = e.results.length;
+    for (var i = 0; i < resultLen; i++) {
       console.log(JSON.stringify(e.results[i]));
       var show = document.createElement('div');
       show.id = i;
