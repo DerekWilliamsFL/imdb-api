@@ -38,8 +38,14 @@ var IMDB = (function () {
           img.src = 'http://colouringbook.org/SVG/2011/COLOURINGBOOK.ORG/cartoon_tv_black_white_line_art_scalable_vector_graphics_svg_inkscape_adobe_illustrator_clip_art_clipart_coloring_book_colouring-1331px.png';
         }
         display.appendChild(img);
-        display.innerHTML += '<p>Air date: ' + e.results[i].release_date || e.results[i].first_air_date + '</p>';
-        display.innerHTML += '<p>Name: ' + e.results[i].title || e.results[i].original_name + '</p>';
+        if (e.results[i].release_date != undefined) {
+        display.innerHTML += '<p>Air date: ' + e.results[i].release_date + '</p>';
+        display.innerHTML += '<p>Name: ' + e.results[i].title  + '</p>';
+        }
+        else if (e.results[i].first_air_date != undefined){
+        display.innerHTML += '<p>Air date: ' + e.results[i].first_air_date + '</p>';
+        display.innerHTML += '<p>Name: ' + e.results[i].original_name + '</p>';
+        }
         display.innerHTML += '<p>Description: ' + e.results[i].overview + '</p>';
 
       };
