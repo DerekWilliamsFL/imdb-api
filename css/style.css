@@ -257,3 +257,48 @@ img {
       width: 125px;
     }
 }
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+.search {
+      width: 390px;
+      margin: 20px auto;
+    }
+
+    .search input[type="text"] {
+      width: 270px;
+    }
+    .search button {
+      float: right;
+      height: 30px;
+      width: 100px;
+    }
+    img {
+      padding: 2px;
+      width: 100px;
+      height: 150px;
+    }
+    #info div {
+      padding: 10px 0 10px 0;
+      height: 200px;
+      width: 110px;
+    }
+
+    #info div p {
+      margin-top: 5px;
+      max-width: 110px;
+      overflow: hidden;
+    }
+    .categories {
+      width: 45%;
+      height: 30px;
+    }
+    #display {
+      height: 220px;
+      overflow: auto;
+    }
+    #display img {
+      height: 175px;
+      width: 125px;
+    }
+
+  }
