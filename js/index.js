@@ -68,10 +68,8 @@ function search() {
     },
     function(e) {
       var results = Object.keys(e.results);
-      console.log("Success: " + e);
 
       for (var i = 0; i < e.results.length; i++) {
-        console.log(JSON.stringify(e.results[i]));
         var show = document.createElement('div');
         show.id = i;
         var json = e.results[i];
@@ -91,7 +89,6 @@ function search() {
           display.innerHTML = '';
           //img.src = '';
           var i = this.id;
-          console.log(i);
           var displayPoster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
           img.src = displayPoster;
           if (img.src === 'http://image.tmdb.org/t/p/w500null') {
@@ -114,7 +111,6 @@ function search() {
     //Base URL + IMG path
     // document.html(tmdb.images_uri + tmdb.size + e.results[0].poster_path);
     function(e) {
-      console.log("Error: " + e)
     }
   )
   tmdb.call('/search/movie', {
@@ -122,10 +118,8 @@ function search() {
     },
     function(e) {
       var results = Object.keys(e.results);
-      console.log("Success: " + e);
 
       for (var i = 0; i < e.results.length; i++) {
-        console.log(JSON.stringify(e.results[i]));
         var show = document.createElement('div');
         show.id = i;
         var json = e.results[i];
@@ -145,7 +139,6 @@ function search() {
           display.innerHTML = '';
           //img.src = '';
           var i = this.id;
-          console.log(i);
           var displayPoster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
           img.src = displayPoster;
           if (img.src === 'http://image.tmdb.org/t/p/w500null') {
@@ -168,7 +161,6 @@ function search() {
     //Base URL + IMG path
     // document.html(tmdb.images_uri + tmdb.size + e.results[0].poster_path);
     function(e) {
-      console.log("Error: " + e)
   }
             )
 };

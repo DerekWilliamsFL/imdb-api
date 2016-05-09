@@ -7,11 +7,8 @@ var IMDB = (function () {
 
   function _search(e) {
     var results = Object.keys(e.results);
-    console.log("Success: " + e);
-    console.log(e.results);
     var resultLen = e.results.length;
     for (var i = 0; i < resultLen; i++) {
-      console.log(JSON.stringify(e.results[i]));
       var show = document.createElement('div');
       show.id = i;
       var json = e.results[i];
@@ -31,7 +28,6 @@ var IMDB = (function () {
         display.innerHTML = '';
         //img.src = '';
         var i = this.id;
-        console.log(i);
         var displayPoster = tmdb.images_uri + tmdb.size + e.results[i].poster_path;
         img.src = displayPoster;
         if (img.src === 'http://image.tmdb.org/t/p/w500null') {
@@ -61,7 +57,6 @@ var IMDB = (function () {
       _search(e);
     },
       function(e) {
-        console.log("Error: " + e)
       }
     )
   }
@@ -74,7 +69,6 @@ var IMDB = (function () {
       _search(e);
     },
       function(e) {
-        console.log("Error: " + e)
       }
     )
   }
@@ -86,7 +80,6 @@ function _topMovies() {
       IMDB.search(e);
     },
     function(e) {
-      console.log("Error: " + e)
     })
 }
 
@@ -98,7 +91,6 @@ function _popular() {
       IMDB.search(e);
     },
     function(e) {
-      console.log("Error: " + e)
     }
   )
 }
@@ -110,7 +102,6 @@ function _nowPlaying() {
       IMDB.search(e);
     },
     function(e) {
-      console.log("Error: " + e)
     })
 }
 
@@ -121,7 +112,6 @@ function _upcoming() {
       IMDB.search(e);
     },
     function(e) {
-      console.log("Error: " + e)
     })
 }
 
@@ -132,7 +122,6 @@ function _tvPopular() {
       IMDB.search(e);
     },
     function(e) {
-      console.log("Error: " + e)
     })
 }
 
@@ -143,7 +132,6 @@ function _tvTopRated() {
       IMDB.search(e);
     },
     function(e) {
-      console.log("Error: " + e)
     })
 }
   return {
